@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <!-- Assembly version information -->
+  <PropertyGroup>
+    <Version>1.2.3.4</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>4.3.2.1</FileVersion>
+    <PackageVersion>100.200.300</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
