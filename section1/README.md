@@ -5,6 +5,7 @@
     - [Key takeaways of part 1](#key-takeaways-of-part-1)
   - [Part 2: Identifying dependencies and their assembly versions](#part-2-identifying-dependencies-and-their-assembly-versions)
     - [Key takeaways of part 2](#key-takeaways-of-part-2)
+  - [Next Steps](#next-steps)
   - [Resources](#resources)
 
 We're going to start by learning the following:
@@ -213,6 +214,10 @@ plays a key role to understanding binding redirects.
 ### Key takeaways of part 2
 
 - An assembly contains the information for dependency assemblies as well as the expected assembly version.
+
+## Next Steps
+
+Continue the tutorial in [Section 2](../section2/README.md).
 
 ## Resources
 

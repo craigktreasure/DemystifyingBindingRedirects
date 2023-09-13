@@ -39,7 +39,7 @@ participants will have a solid understanding of binding redirects and how to use
 1. [Assembly versioning](./section1/README.md)
    1. How are .NET assemblies versioned?
    2. How to identify .NET assembly versions?
-2. How assemblies are loaded in a .NET Framework application
+2. [How assemblies are loaded in a .NET Framework application](./section2/README.md)
    1. How are assemblies loaded?
    2. How can assembly load issues occur?
 3. Binding Redirects in .NET Framework applications
