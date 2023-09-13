@@ -1,0 +1,39 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+
+# IMPORTANT
+# This file is intended to be a static template. It shouldn't be modified for project specific settings.
+# Place project specific settings in subfolders whenever possible.
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = false
+trim_trailing_whitespace = true
+
+# Add guidelines to editor: https://github.com/pharring/EditorGuidelines#editorconfig-support-vs-2017-or-above
+guidelines = 80, 120
+
+[*.{yml,yaml}]
+indent_size = 2
+insert_final_newline = true
+
+[*.{props,csproj,sln,targets}]
+indent_size = 2
+insert_final_newline = true
+
+[*.config]
+indent_size = 2
+insert_final_newline = true
+
+[*.md]
+insert_final_newline = true
+
+[*.cs]
+
+indent_size = 4
+tab_width = 4
+insert_final_newline = true
