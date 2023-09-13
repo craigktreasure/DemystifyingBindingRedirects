@@ -3,6 +3,7 @@
 - [How assemblies are loaded in a .NET Framework application](#how-assemblies-are-loaded-in-a-net-framework-application)
   - [Part 1: Assembly loading](#part-1-assembly-loading)
   - [Part 2: A practical example of an assembly load issue](#part-2-a-practical-example-of-an-assembly-load-issue)
+  - [Next Steps](#next-steps)
   - [Resources](#resources)
 
 In this section, we'll lean the following:
@@ -137,6 +138,10 @@ There are a few options for resolving this issue and each has tradeoffs dependin
 - Use Binding Redirects to allow the runtime to load the unexpected assembly version.
   - Useful when you either can't re-compile the application or you don't control the dependencies on which the
     application runs.
+
+## Next Steps
+
+Continue the tutorial in [Section 3](../section3/README.md).
 
 ## Resources
 

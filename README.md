@@ -42,7 +42,7 @@ participants will have a solid understanding of binding redirects and how to use
 2. [How assemblies are loaded in a .NET Framework application](./section2/README.md)
    1. How are assemblies loaded?
    2. How can assembly load issues occur?
-3. Binding Redirects in .NET Framework applications
+3. [Binding Redirects in .NET Framework applications](./section3/README.md)
    1. What are binding redirects and when are they necessary?
    2. How to apply a binding redirect?
    3. How to load an assembly from another location?
