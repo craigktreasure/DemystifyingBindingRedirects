@@ -6,6 +6,7 @@
   - [Part 2: Diagnose binding issues using Fusion++](#part-2-diagnose-binding-issues-using-fusion)
   - [Part 3: Capturing Fusion logs using the registry](#part-3-capturing-fusion-logs-using-the-registry)
   - [Key takeaways](#key-takeaways)
+  - [Next Steps](#next-steps)
   - [Resources](#resources)
 
 We're going to start by learning the following:
@@ -221,6 +222,10 @@ automates much of the process for you. Repeat the process with the helper script
 - Fusion logs are useful when identifying binding related issues.
 - There are tools available to make the process of getting Fusion logs a bit easier.
 - It's also easy to record Fusion logs using the registry.
+
+## Next Steps
+
+Continue the tutorial in [Section 5](../section5/README.md).
 
 ## Resources
 

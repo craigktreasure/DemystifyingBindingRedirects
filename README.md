@@ -36,6 +36,7 @@ participants will have a solid understanding of binding redirects and how to use
 * [Fusion++](https://github.com/awaescher/Fusion)
 * [Visual Studio](https://visualstudio.com/)
   * Include the **.NET desktop development** workload.
+* [dotnet-trace](https://learn.microsoft.com/dotnet/core/diagnostics/dotnet-trace)
 
 ## Outline
 
@@ -52,7 +53,9 @@ participants will have a solid understanding of binding redirects and how to use
    4. Automatic binding redirects
 4. [Diagnosing issues related to binding redirects](./section4/README.md)
    1. How to identify binding redirect related issues?
-5. Binding Redirects in other .NET runtimes
-   1. Are binding redirects necessary in .NET Core applications?
+5. [Binding Redirects in other .NET runtimes](./section5/README.md)
+   1. Are binding redirects necessary or possible in modern .NET (Core) applications?
+   2. How to diagnose assembly load issues in modern .NET (Core) applications?
+   3. What are the alternatives?
 
 Start [here](./section1/README.md).

@@ -1,4 +1,5 @@
 __tools
+*.nettrace
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,visualstudio,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,visualstudio,visualstudiocode
