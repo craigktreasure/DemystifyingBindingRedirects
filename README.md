@@ -33,6 +33,9 @@ participants will have a solid understanding of binding redirects and how to use
   * Note that the version that comes with Chocolatey is old. Get the version from the ".zip" (NuGet package) instead.
   * Alternatively, you can run the [`scripts\SetupAsmSpy.ps1`](./scripts/SetupAsmSpy.ps1) script from PowerShell to
     download the package, extract it, and add it to the path for you.
+* [Fusion++](https://github.com/awaescher/Fusion)
+* [Visual Studio](https://visualstudio.com/)
+  * Include the **.NET desktop development** workload.
 
 ## Outline
 
@@ -47,7 +50,7 @@ participants will have a solid understanding of binding redirects and how to use
    2. How to apply a binding redirect?
    3. How to load an assembly from another location?
    4. Automatic binding redirects
-4. Diagnosing issues related to binding redirects
+4. [Diagnosing issues related to binding redirects](./section4/README.md)
    1. How to identify binding redirect related issues?
 5. Binding Redirects in other .NET runtimes
    1. Are binding redirects necessary in .NET Core applications?

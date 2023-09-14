@@ -8,6 +8,7 @@
     - [Load using a probing element](#load-using-a-probing-element)
   - [Part 3: Automatic binding redirects](#part-3-automatic-binding-redirects)
   - [FAQ](#faq)
+  - [Next Steps](#next-steps)
   - [Resources](#resources)
 
 In this section, we'll lean the following:
@@ -298,6 +299,10 @@ Assembly version `13.0.0.0` will be expected and `14.0.0.0` will be ignored.
   the application depends on was removed or modified, you'll get a runtime error if you're lucky, but it could also
   result in unexpected behavior. If an API used to return "a", but now returns "aa" and the application code wasn't
   expecting that, the application might behave in an unexpected way. These issues can be difficult to debug.
+
+## Next Steps
+
+Continue the tutorial in [Section 4](../section4/README.md).
 
 ## Resources
 
