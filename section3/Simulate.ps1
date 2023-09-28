@@ -48,7 +48,6 @@ function SwitchDependency() {
         $maintainedDependencyPath = Join-Path $maintainedDependencyFolderPath $dependencyFileName
         Write-Host 'Keeping the old dependency...' -ForegroundColor Magenta
         Copy-Item -Path $pathToOverwrite -Destination $maintainedDependencyPath -Force
-        return
     }
 
     Write-Host 'Overwriting the dependency from package version 12.0.3 with 13.0.3...' -ForegroundColor Magenta
