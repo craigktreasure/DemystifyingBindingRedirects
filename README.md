@@ -24,7 +24,7 @@ participants will have a solid understanding of binding redirects and how to use
 * Windows
   * While the concepts demonstrated here are applicable to .NET Framework applications running on other platforms,
     the tutorial will assume you're using Windows.
-* [.NET SDK 6.0+](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [.NET SDK 8.0+](https://dotnet.microsoft.com/download/dotnet/8.0)
 * [NuGet Package Explorer](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer)
 * [ILSpy](https://github.com/icsharpcode/ILSpy)
 * [PowerShell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell)

@@ -28,7 +28,7 @@ loads assemblies. This tutorial won't go into detail on those changes, but you c
 ## Part 1: Demonstration
 
 As in previous sections, let's use an example to see the difference in behavior. The `/section5` directory contains a
-project that is a copy from `/section2` with the `TargetFramework` changed from `net472` to `net6.0` to target .NET 6.
+project that is a copy from `/section2` with the `TargetFramework` changed from `net472` to `net8.0` to target .NET 8.
 
 As before, we have our trusty [Simulate.ps1][simulate-script] script to make these experiments easier. We're going to
 run 3 different scenarios:
@@ -48,8 +48,8 @@ Publishing the application...
 MSBuild version 17.3.2+561848881 for .NET
   Determining projects to restore...
   All projects are up-to-date for restore.
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\Section5.dll
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\publish\
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\Section5.dll
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\publish\
 Running the application...
 ["Hello","World!"]
 ```
@@ -66,8 +66,8 @@ Publishing the application...
 MSBuild version 17.3.2+561848881 for .NET
   Determining projects to restore...
   All projects are up-to-date for restore.
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\Section5.dll
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\publish\
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\Section5.dll
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\publish\
 Running the application...
 ["Hello","World!"]
 ```
@@ -90,8 +90,8 @@ Publishing the application...
 MSBuild version 17.3.2+561848881 for .NET
   Determining projects to restore...
   All projects are up-to-date for restore.
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\Section5.dll
-  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net6.0\publish\
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\Section5.dll
+  Section5 -> C:\Users\me\repos\DemystifyingBindingRedirects\section5\bin\Debug\net8.0\publish\
 Switching the dependency...
 Downloading newer dependency...
 Extracting the dependency...
@@ -118,7 +118,7 @@ This next step assumes the last command you ran was scenario 3 from [part 1](#pa
 run the command for scenario 3 in [part 1](#part-1-demonstration) to get the application into a failing state.
 
 To run the tool and capture diagnostic events for our process, run
-`dotnet-trace collect --providers Microsoft-Windows-DotNETRuntime:4 --output section5.nettrace -- .\bin\Debug\net6.0\publish\Section5.exe Hello World!`.
+`dotnet-trace collect --providers Microsoft-Windows-DotNETRuntime:4 --output section5.nettrace -- .\bin\Debug\net8.0\publish\Section5.exe Hello World!`.
 
 This will emit a `section5.nettrace` file in the current directory. The [documentation][collect-assembly-loading-info]
 suggests using a tool called **PerfView** to open the `section5.nettrace` file, but the latest version appears to fail to do so.
@@ -163,17 +163,34 @@ There is, however, an option to override assembly loading issues at runtime.
 
 Open [`Program.cs`](./Program.cs) in a text editor.
 
-Add the following `using` statements:
+Move the contents of the `Main` method into a new method called `Run` and call it from the `Main` method passing the
+`args` parameter. This step may seem counterintuitive, but it's very important as it ensures the `Newtonsoft.Json`
+assembly isn't loaded before we have a chance to hook up the ability to deal with it.
+
+```csharp
+internal static class Program
+{
+    private static void Main(string[] args)
+    {
+        Run(args);
+    }
+
+    private static void Run(string[] args)
+    {
+        Console.WriteLine("Starting.");
+        string json = JsonConvert.SerializeObject(args);
+        Console.WriteLine(json);
+    }
+}
+```
+
+Next, add the following `using` statements:
 
 ```csharp
 using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 ```
-
-Move the contents of the `Main` method into a new method called `Run` and call it from the `Main` method passing the
-`args` parameter. This step may seem counterintuitive, but it's very important as it ensures the `Newtonsoft.Json`
-assembly isn't loaded before we have a chance to hook up the ability to deal with it.
 
 Then, first thing in the `Main` method, add the following code snippet:
 
@@ -243,6 +260,7 @@ internal static class Program
 
     private static void Run(string[] args)
     {
+        Console.WriteLine("Starting.");
         string json = JsonConvert.SerializeObject(args);
         Console.WriteLine(json);
     }

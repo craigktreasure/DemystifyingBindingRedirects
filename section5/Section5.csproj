@@ -2,8 +2,12 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>10.0</LangVersion>
+    <!-- .NET 8 began warning on vulnerable packages. Newtonsoft.Json 12.0.3 does
+    contain security vulnerabilities and should not be used in production. It is
+    used here for demonstration purposes. -->
+    <NoWarn>$(NoWarn);NU1903</NoWarn>
   </PropertyGroup>
 
   <!-- Assembly version information -->
