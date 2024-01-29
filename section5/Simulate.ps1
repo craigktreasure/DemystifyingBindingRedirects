@@ -13,7 +13,7 @@ $projectFolder = $PSScriptRoot
 function RunApp() {
     $projectFilePath = Get-Item -Path $projectFolder -Filter *.csproj
     $projectName = [System.IO.Path]::GetFileNameWithoutExtension($projectFilePath)
-    & "./bin/Debug/net6.0/publish/$projectName.exe" Hello World!
+    & "./bin/Debug/net8.0/publish/$projectName.exe" Hello World!
 }
 
 function SwitchDependency() {
@@ -40,7 +40,7 @@ function SwitchDependency() {
     }
 
     $newDependencyPath = Join-Path $extractPath "lib/$SwitchDependencyTfm/Newtonsoft.Json.dll"
-    $pathToOverwrite = Join-Path $projectFolder 'bin/Debug/net6.0/publish/Newtonsoft.Json.dll'
+    $pathToOverwrite = Join-Path $projectFolder 'bin/Debug/net8.0/publish/Newtonsoft.Json.dll'
 
     Write-Host "Overwriting the dependency from package version 12.0.3 with $SwitchDependencyPackageVersion..." -ForegroundColor Magenta
     Copy-Item -Path $newDependencyPath -Destination $pathToOverwrite -Force
@@ -48,7 +48,7 @@ function SwitchDependency() {
 
 Push-Location $projectFolder
 try {
-    $publishOutputFolder = Join-Path $projectFolder 'bin/Debug/net6.0/publish'
+    $publishOutputFolder = Join-Path $projectFolder 'bin/Debug/net8.0/publish'
     if (Test-Path $publishOutputFolder) {
         Write-Host 'Cleaning the publish output folder...' -ForegroundColor Magenta
         Remove-Item -Path $publishOutputFolder -Recurse -Force
